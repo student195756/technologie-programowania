@@ -10,6 +10,9 @@ namespace zadanie1
     {
         static void Main(string[] args)
         {
+            Klient ja = new Klient("Łukasz", "Bączyk", "AUZ9868567");
+
+            Console.ReadKey();
         }
     }
 }
