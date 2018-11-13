@@ -14,6 +14,12 @@ namespace zadanie1
 
             wykaz.dodajKlienta("Lukasz", "Baczyk", "AUZ123");
 
+            KatalogGier katalog = new KatalogGier();
+
+            katalog.dodajWpis("magia i miecz", "fajna gra");
+
+            Console.Write(katalog.zwrocOpisGry("magia i miecz"));
+
             System.Console.ReadKey();
         }
     }
