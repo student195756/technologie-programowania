@@ -11,12 +11,24 @@ namespace zadanie1
         private string nazwaGry;
         private int liczbaEgzemplarzy;
         private float cenaWypozyczenia;
+        private string opis;
 
-        public StanGry(string nazwaGry, int liczbaEgzemplarzy, float cenaWypozyczenia)
+        public StanGry(string nazwaGry, int liczbaEgzemplarzy, float cenaWypozyczenia, KatalogGier katalog)
         {
             this.nazwaGry = nazwaGry;
             this.liczbaEgzemplarzy = liczbaEgzemplarzy;
             this.cenaWypozyczenia = cenaWypozyczenia;
+            this.opis = katalog.zwrocOpisGry(nazwaGry);
+        }
+
+        public int zwrocLiczbeEgzemplarzy()
+        {
+            return liczbaEgzemplarzy;
+        }
+
+        public void ustawLiczbeEgzemplarzy(int liczbaEgzemplarzy)
+        {
+            this.liczbaEgzemplarzy = liczbaEgzemplarzy;
         }
 
     }
