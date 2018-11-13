@@ -10,9 +10,11 @@ namespace zadanie1
     {
         static void Main(string[] args)
         {
-            Klient ja = new Klient("Łukasz", "Bączyk", "AUZ9868567");
+            WykazKlientow wykaz = new WykazKlientow();
 
-            Console.ReadKey();
+            wykaz.dodajKlienta("Lukasz", "Baczyk", "AUZ123");
+
+            System.Console.ReadKey();
         }
     }
 }
