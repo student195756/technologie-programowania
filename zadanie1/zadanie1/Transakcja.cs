@@ -8,11 +8,14 @@ namespace zadanie1
 {
     class Transakcja
     {
+        private Klient wypozyczajacy;
+        private Gra gra;
+        private DateTime dataWypozyczenia;
+        private DateTime dataOddania;
+
         public void wypozyczGre(StanGry gra, Klient klient)
         {
             int liczbaEgzemplarzy = gra.zwrocLiczbeEgzemplarzy();
-            DateTime dataWypozyczenia;
-            DateTime dataOddania;
 
             if(liczbaEgzemplarzy > 0)
             {
