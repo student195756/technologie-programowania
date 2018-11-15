@@ -8,6 +8,11 @@ namespace zadanie1
 {
     class RepozytoriumDanych
     {
-        private BazaDanych bazaDanych;
+        private BazaDanych bazaDanych = new BazaDanych();
+
+        public RepozytoriumDanych(WypelnienieDanymi wypelnienie)
+        {
+            bazaDanych = wypelnienie.wypelnij();
+        }
     }
 }

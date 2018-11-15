@@ -13,6 +13,14 @@ namespace zadanie1
         private DateTime dataWypozyczenia;
         private DateTime dataOddania;
 
+        public Transakcja(Gra gra, Klient wypozyczajacy, DateTime dataWypozyczenia, DateTime dataOddania)
+        {
+            this.wypozyczajacy = wypozyczajacy;
+            this.gra = gra;
+            this.dataWypozyczenia = dataWypozyczenia;
+            this.dataOddania = dataOddania;
+        }
+
         public void wypozyczGre(StanGry gra, Klient klient)
         {
             int liczbaEgzemplarzy = gra.zwrocLiczbeEgzemplarzy();
@@ -28,6 +36,5 @@ namespace zadanie1
                 Console.Write("Transakcja niemozliwa - brak gry na stanie");
             }
         }
-
     }
 }

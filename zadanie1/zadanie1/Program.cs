@@ -10,17 +10,9 @@ namespace zadanie1
     {
         static void Main(string[] args)
         {
-            WykazKlientow wykaz = new WykazKlientow();
+            RepozytoriumDanych repozytorium = new RepozytoriumDanych( new WypelnienieStalymi() );
 
-            wykaz.dodajKlienta("Lukasz", "Baczyk", "AUZ123");
-
-            KatalogGier katalog = new KatalogGier();
-
-            katalog.dodajWpis("magia i miecz", "fajna gra");
-
-            Console.Write(katalog.zwrocOpisGry("magia i miecz"));
-
-            System.Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }

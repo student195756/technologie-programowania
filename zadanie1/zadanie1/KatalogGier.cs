@@ -8,7 +8,7 @@ namespace zadanie1
 {
     class KatalogGier
     {
-        //         tytuł gry, opis
+                        // tytuł gry, opis
         private Dictionary<string, string> slownikKatalogu = new Dictionary<string, string>();
 
         public void dodajWpis(string tytulGry, string opis)

@@ -13,12 +13,21 @@ namespace zadanie1
         private float cenaWypozyczenia;
         private string opis;
 
-        public StanGry(string nazwaGry, int liczbaEgzemplarzy, float cenaWypozyczenia, KatalogGier katalog)
+        // zakomentowane do czasu ogarniecia katalogu gier
+        //public StanGry(string nazwaGry, int liczbaEgzemplarzy, float cenaWypozyczenia, KatalogGier katalog)
+        //{
+        //    this.nazwaGry = nazwaGry;
+        //    this.liczbaEgzemplarzy = liczbaEgzemplarzy;
+        //    this.cenaWypozyczenia = cenaWypozyczenia;
+        //    this.opis = katalog.zwrocOpisGry(nazwaGry);
+        //}
+
+        //temporary solution
+        public StanGry(string nazwaGry, int liczbaEgzemplarzy, float cenaWypozyczenia)
         {
             this.nazwaGry = nazwaGry;
             this.liczbaEgzemplarzy = liczbaEgzemplarzy;
             this.cenaWypozyczenia = cenaWypozyczenia;
-            this.opis = katalog.zwrocOpisGry(nazwaGry);
         }
 
         public int zwrocLiczbeEgzemplarzy()
