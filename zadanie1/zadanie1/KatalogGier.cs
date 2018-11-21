@@ -9,7 +9,7 @@ namespace zadanie1
     public class KatalogGier
     {
                         // tytuł gry, opis
-        public Dictionary<string, string> slownikKatalogu = new Dictionary<string, string>();
+        private Dictionary<string, string> slownikKatalogu = new Dictionary<string, string>();
 
         public void dodajWpis(string tytulGry, string opis)
         {
@@ -19,6 +19,16 @@ namespace zadanie1
         public string zwrocOpisGry(string tytulGry)
         {
             return slownikKatalogu[tytulGry];
+        }
+
+        public void ustawOpisGry(string tytulGry, string opis)
+        {
+            slownikKatalogu[tytulGry] = opis;
+        }
+
+        public void usunGre(string tytul)
+        {
+            slownikKatalogu.Remove(tytul);
         }
     }
 }

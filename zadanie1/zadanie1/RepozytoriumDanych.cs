@@ -14,5 +14,25 @@ namespace zadanie1
         {
             bazaDanych = wypelnienie.wypelnij();
         }
+
+        public void dodajWpisKatalogowy(string tytulGry, string opisGry)
+        {
+            bazaDanych.katalogGier.dodajWpis(tytulGry, opisGry);
+        }
+
+        public string zwrocInformacjeKatalogoweGry(string tytulGry)
+        {
+            return bazaDanych.katalogGier.zwrocOpisGry(tytulGry);
+        }
+
+        public void zaktualizujOpisGry(string tytulGry, string nowyOpis)
+        {
+            bazaDanych.katalogGier.ustawOpisGry(tytulGry, nowyOpis);
+        }
+
+        public void usunWpisKatalogowy(string tytulGry)
+        {
+            bazaDanych.katalogGier.usunGre(tytulGry);
+        }
     }
 }
