@@ -11,7 +11,7 @@ namespace zadanie1
     {
         public WykazKlientow wykazKlientow;
         public KatalogGier katalogGier;
-        public ObservableCollection<Transakcja> transakcje;
+        public ObservableCollection<Zdarzenie> zdarzenia;
         public List<StanGry> stanGier;
     }
 }

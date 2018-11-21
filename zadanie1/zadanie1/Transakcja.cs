@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace zadanie1
 {
-    class Transakcja
+    class Transakcja : Zdarzenie
     {
         private Klient wypozyczajacy;
         private Gra gra;
