@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace zadanie1
 {
-    class Gra
+    public class Gra
     {
         private string tytul;
         private string opis;

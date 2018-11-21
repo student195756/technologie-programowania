@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace zadanie1
 {
-    class WykazKlientow
+    public class WykazKlientow
     {
-        private List<Klient> klienci = new List<Klient>();
+        public List<Klient> klienci = new List<Klient>();
 
         public void dodajKlienta(string imie, string nazwisko, string numerDowodu)
         {

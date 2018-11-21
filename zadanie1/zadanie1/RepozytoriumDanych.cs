@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace zadanie1
 {
-    class RepozytoriumDanych
+    public class RepozytoriumDanych
     {
         private BazaDanych bazaDanych = new BazaDanych();
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace zadanie1
 {
-    class StanGry
+    public class StanGry
     {
         private string nazwaGry;
         private int liczbaEgzemplarzy;

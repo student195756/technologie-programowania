@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace zadanie1
 {
-    class BazaDanych
+    public class BazaDanych
     {
-        public WykazKlientow wykazKlientow;
-        public KatalogGier katalogGier;
-        public ObservableCollection<Zdarzenie> zdarzenia;
-        public List<StanGry> stanGier;
+        public WykazKlientow wykazKlientow = new WykazKlientow();
+        public KatalogGier katalogGier = new KatalogGier();
+        public ObservableCollection<Zdarzenie> zdarzenia = new ObservableCollection<Zdarzenie>();
+        public List<StanGry> stanGier = new List<StanGry>();
     }
 }

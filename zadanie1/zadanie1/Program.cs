@@ -10,8 +10,6 @@ namespace zadanie1
     {
         static void Main(string[] args)
         {
-            RepozytoriumDanych repozytorium = new RepozytoriumDanych( new WypelnienieStalymi() );
-
             Console.ReadKey();
         }
     }

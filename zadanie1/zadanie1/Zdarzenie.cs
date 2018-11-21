@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace zadanie1
 {
-    abstract class Zdarzenie
+    public abstract class Zdarzenie
     {
     }
 }

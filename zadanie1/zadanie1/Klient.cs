@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace zadanie1
 {
-    class Klient
+    public class Klient
     {
         private string imie;
         private string nazwisko;

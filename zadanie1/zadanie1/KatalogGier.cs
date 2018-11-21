@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace zadanie1
 {
-    class KatalogGier
+    public class KatalogGier
     {
                         // tytuł gry, opis
-        private Dictionary<string, string> slownikKatalogu = new Dictionary<string, string>();
+        public Dictionary<string, string> slownikKatalogu = new Dictionary<string, string>();
 
         public void dodajWpis(string tytulGry, string opis)
         {
