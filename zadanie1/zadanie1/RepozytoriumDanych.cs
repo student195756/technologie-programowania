@@ -39,6 +39,31 @@ namespace zadanie1
         {
             return bazaDanych.katalogGier.zwrocSlownik();
         }
+
+        public void dodajKlienta(Klient klient)
+        {
+            bazaDanych.wykazKlientow.Add(klient);
+        }
+
+        Klient zwrocKlienta(int numerElementu)
+        {
+            return bazaDanych.wykazKlientow.ElementAt(numerElementu);
+        }
+
+        List<Klient> zwrocListeKlientow()
+        {
+            return bazaDanych.wykazKlientow;
+        }
+
+        void aktualizujKlienta(int numerElementu, Klient klient)
+        {
+            bazaDanych.wykazKlientow[numerElementu] = klient;
+        }
+
+        void usunKlienta(int numerElementu)
+        {
+            bazaDanych.wykazKlientow.RemoveRange(numerElementu, 1);
+        }
         
     }
 }
