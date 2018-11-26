@@ -63,7 +63,7 @@ namespace zadanie1
 
         void usunKlienta(int indeks)
         {
-            bazaDanych.wykazKlientow.RemoveRange(indeks, 1);
+            bazaDanych.wykazKlientow.RemoveAt(indeks);
         }
 
         void dodajZdarzenie(Zdarzenie zdarzenie)
@@ -89,6 +89,31 @@ namespace zadanie1
         void usunZdarzenie(int indeks)
         {
             bazaDanych.zdarzenia.RemoveAt(indeks);
+        }
+
+        void dodajNowyStanGry(StanGry stanGry)
+        {
+            bazaDanych.stanGier.Add(stanGry);
+        }
+
+        StanGry zwrocStanGry(int indeks)
+        {
+            return bazaDanych.stanGier[indeks];
+        }
+
+        List<StanGry> zwrocListeGier()
+        {
+            return bazaDanych.stanGier;
+        }
+
+        void aktualizujStanGry(int indeks, StanGry stanGry)
+        {
+            bazaDanych.stanGier[indeks] = stanGry;
+        }
+
+        void usunStanGry(int indeks)
+        {
+            bazaDanych.stanGier.RemoveAt(indeks);
         }
         
     }
