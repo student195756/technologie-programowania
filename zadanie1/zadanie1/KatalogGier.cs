@@ -26,6 +26,11 @@ namespace zadanie1
             slownikKatalogu[tytulGry] = opis;
         }
 
+        public Dictionary<string, string> zwrocSlownik()
+        {
+            return slownikKatalogu;
+        }
+
         public void usunGre(string tytul)
         {
             slownikKatalogu.Remove(tytul);

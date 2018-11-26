@@ -34,5 +34,11 @@ namespace zadanie1
         {
             bazaDanych.katalogGier.usunGre(tytulGry);
         }
+
+        public Dictionary<string, string> zwrocInformacjeKatalogoweWszystkichGier()
+        {
+            return bazaDanych.katalogGier.zwrocSlownik();
+        }
+        
     }
 }
