@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace zadanie1
 {
-    public class Transakcja : Zdarzenie
+    public class Wypozyczenie : Zdarzenie
     {
         private Klient wypozyczajacy;
         private StanGry gra;
         private DateTime dataWypozyczenia;
         private DateTime dataOddania;
 
-        public Transakcja(StanGry gra, Klient wypozyczajacy, DateTime dataWypozyczenia, DateTime dataOddania)
+        public Wypozyczenie(StanGry gra, Klient wypozyczajacy, DateTime dataWypozyczenia, DateTime dataOddania)
         {
             this.wypozyczajacy = wypozyczajacy;
             this.gra = gra;

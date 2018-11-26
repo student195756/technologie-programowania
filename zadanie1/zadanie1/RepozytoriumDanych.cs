@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,9 +46,9 @@ namespace zadanie1
             bazaDanych.wykazKlientow.Add(klient);
         }
 
-        Klient zwrocKlienta(int numerElementu)
+        Klient zwrocKlienta(int indeks)
         {
-            return bazaDanych.wykazKlientow.ElementAt(numerElementu);
+            return bazaDanych.wykazKlientow.ElementAt(indeks);
         }
 
         List<Klient> zwrocListeKlientow()
@@ -55,14 +56,39 @@ namespace zadanie1
             return bazaDanych.wykazKlientow;
         }
 
-        void aktualizujKlienta(int numerElementu, Klient klient)
+        void aktualizujKlienta(int indeks, Klient klient)
         {
-            bazaDanych.wykazKlientow[numerElementu] = klient;
+            bazaDanych.wykazKlientow[indeks] = klient;
         }
 
-        void usunKlienta(int numerElementu)
+        void usunKlienta(int indeks)
         {
-            bazaDanych.wykazKlientow.RemoveRange(numerElementu, 1);
+            bazaDanych.wykazKlientow.RemoveRange(indeks, 1);
+        }
+
+        void dodajZdarzenie(Zdarzenie zdarzenie)
+        {
+            bazaDanych.zdarzenia.Add(zdarzenie);
+        }
+
+        Zdarzenie zwrocZdarzenie(int indeks)
+        {
+            return bazaDanych.zdarzenia[indeks];
+        }
+
+        ObservableCollection<Zdarzenie> zwrocWszystkieZdarzenia()
+        {
+            return bazaDanych.zdarzenia;
+        }
+
+        void aktualizujZdarzenie(int indeks, Zdarzenie zdarzenie)
+        {
+            bazaDanych.zdarzenia[indeks] = zdarzenie;
+        }
+
+        void usunZdarzenie(int indeks)
+        {
+            bazaDanych.zdarzenia.RemoveAt(indeks);
         }
         
     }
