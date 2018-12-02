@@ -46,7 +46,7 @@ namespace zadanie1
             bazaDanych.wykazKlientow.Add(klient);
         }
 
-        Klient zwrocKlienta(int indeks)
+        public Klient zwrocKlienta(int indeks)
         {
             return bazaDanych.wykazKlientow.ElementAt(indeks);
         }

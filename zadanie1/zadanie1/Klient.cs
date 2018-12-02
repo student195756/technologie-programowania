@@ -26,5 +26,20 @@ namespace zadanie1
             Console.WriteLine(numerDowodu);
         }
 
+        public string zwrocImie()
+        {
+            return this.imie;
+        }
+
+        public string zwrocNazwisko()
+        {
+            return this.nazwisko;
+        }
+
+        public string zwrocNumerDowodu()
+        {
+            return this.numerDowodu;
+        }
+
     }
 }

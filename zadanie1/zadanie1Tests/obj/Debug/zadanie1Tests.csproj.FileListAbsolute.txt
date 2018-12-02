@@ -1,0 +1,9 @@
+D:\repo\technologie-programowania\zadanie1\zadanie1Tests\bin\Debug\zadanie1Tests.dll
+D:\repo\technologie-programowania\zadanie1\zadanie1Tests\bin\Debug\zadanie1Tests.pdb
+D:\repo\technologie-programowania\zadanie1\zadanie1Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\repo\technologie-programowania\zadanie1\zadanie1Tests\bin\Debug\zadanie1.exe
+D:\repo\technologie-programowania\zadanie1\zadanie1Tests\bin\Debug\zadanie1.pdb
+D:\repo\technologie-programowania\zadanie1\zadanie1Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+D:\repo\technologie-programowania\zadanie1\zadanie1Tests\obj\Debug\zadanie1Tests.csprojResolveAssemblyReference.cache
+D:\repo\technologie-programowania\zadanie1\zadanie1Tests\obj\Debug\zadanie1Tests.dll
+D:\repo\technologie-programowania\zadanie1\zadanie1Tests\obj\Debug\zadanie1Tests.pdb
