@@ -36,5 +36,25 @@ namespace zadanie1
                 Console.Write("Transakcja niemozliwa - brak gry na stanie");
             }
         }
+
+        public StanGry zwrocStanGry()
+        {
+            return this.gra;
+        }
+
+        public Klient zwrocWypozyczajacego()
+        {
+            return this.wypozyczajacy;
+        }
+
+        public DateTime zwrocDateWypozyczenia()
+        {
+            return this.dataWypozyczenia;
+        }
+
+        public DateTime zwrocDateOddania()
+        {
+            return this.dataOddania;
+        }
     }
 }

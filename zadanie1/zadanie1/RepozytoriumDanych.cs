@@ -51,70 +51,69 @@ namespace zadanie1
             return bazaDanych.wykazKlientow.ElementAt(indeks);
         }
 
-        List<Klient> zwrocListeKlientow()
+        public List<Klient> zwrocListeKlientow()
         {
             return bazaDanych.wykazKlientow;
         }
 
-        void aktualizujKlienta(int indeks, Klient klient)
+        public void aktualizujKlienta(int indeks, Klient nowyKlient)
         {
-            bazaDanych.wykazKlientow[indeks] = klient;
+            bazaDanych.wykazKlientow[indeks] = nowyKlient;
         }
 
-        void usunKlienta(int indeks)
+        public void usunKlienta(int indeks)
         {
             bazaDanych.wykazKlientow.RemoveAt(indeks);
         }
 
-        void dodajZdarzenie(Zdarzenie zdarzenie)
+        public void dodajZdarzenie(Zdarzenie zdarzenie)
         {
             bazaDanych.zdarzenia.Add(zdarzenie);
         }
 
-        Zdarzenie zwrocZdarzenie(int indeks)
+        public Zdarzenie zwrocZdarzenie(int indeks)
         {
             return bazaDanych.zdarzenia[indeks];
         }
 
-        ObservableCollection<Zdarzenie> zwrocWszystkieZdarzenia()
+        public ObservableCollection<Zdarzenie> zwrocWszystkieZdarzenia()
         {
             return bazaDanych.zdarzenia;
         }
 
-        void aktualizujZdarzenie(int indeks, Zdarzenie zdarzenie)
+        public void aktualizujZdarzenie(int indeks, Zdarzenie zdarzenie)
         {
             bazaDanych.zdarzenia[indeks] = zdarzenie;
         }
 
-        void usunZdarzenie(int indeks)
+        public void usunZdarzenie(int indeks)
         {
             bazaDanych.zdarzenia.RemoveAt(indeks);
         }
 
-        void dodajNowyStanGry(StanGry stanGry)
+        public void dodajNowyStanGry(StanGry stanGry)
         {
             bazaDanych.stanGier.Add(stanGry);
         }
 
-        StanGry zwrocStanGry(int indeks)
+        public StanGry zwrocStanGry(int indeks)
         {
             return bazaDanych.stanGier[indeks];
         }
 
-        List<StanGry> zwrocListeGier()
+        public List<StanGry> zwrocListeGier()
         {
             return bazaDanych.stanGier;
         }
 
-        void aktualizujStanGry(int indeks, StanGry stanGry)
+        public void aktualizujStanGry(int indeks, StanGry stanGry)
         {
             bazaDanych.stanGier[indeks] = stanGry;
         }
 
-        void usunStanGry(int indeks)
+        public void usunStanGry(int indeks)
         {
             bazaDanych.stanGier.RemoveAt(indeks);
         }
-        
     }
 }
