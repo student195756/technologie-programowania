@@ -210,7 +210,7 @@ namespace zadanie1.Tests
             Wypozyczenie wypozyczenie;
             int liczbaWypozyczen;
 
-            wypozyczenie = new Wypozyczenie(gra, wypozyczajacy, a, a);
+            wypozyczenie = new Wypozyczenie(3, 3, a, a);
             repozytorium.dodajZdarzenie(wypozyczenie);
             liczbaWypozyczen = repozytorium.zwrocWszystkieZdarzenia().Count;
 
@@ -224,35 +224,19 @@ namespace zadanie1.Tests
             RepozytoriumDanych repozytorium;
             repozytorium = new RepozytoriumDanych(daneTestowe);
             Wypozyczenie wypozyczenie;
-            StanGry gra;
-            string nazwaGry;
-            int liczbaEgzemplarzyGry;
-            float cenaGry;
-            Klient klient;
-            string imieKlienta;
-            string nazwiskoKlienta;
-            string nrDowoduKlienta;
+            int idGry;
+            int idKlienta;
             DateTime dataWypozyczenia;
             DateTime dataOddania;
 
             wypozyczenie = (Wypozyczenie)repozytorium.zwrocZdarzenie(0);
-            gra = wypozyczenie.zwrocStanGry();
-            nazwaGry = gra.zwrocNazweGry();
-            liczbaEgzemplarzyGry = gra.zwrocLiczbeEgzemplarzy();
-            cenaGry = gra.zwrocCeneWypozyczenia();
-            klient = wypozyczenie.zwrocWypozyczajacego();
-            imieKlienta = klient.zwrocImie();
-            nazwiskoKlienta = klient.zwrocNazwisko();
-            nrDowoduKlienta = klient.zwrocNumerDowodu();
+            idGry = wypozyczenie.zwrocIdGry();
+            idKlienta = wypozyczenie.zwrocIdWypozyczajacego();
             dataWypozyczenia = wypozyczenie.zwrocDateWypozyczenia();
             dataOddania = wypozyczenie.zwrocDateOddania();
 
-            Assert.AreEqual("nazwa", nazwaGry);
-            Assert.AreEqual(1, liczbaEgzemplarzyGry);
-            Assert.AreEqual(100f, cenaGry);
-            Assert.AreEqual("imie", imieKlienta);
-            Assert.AreEqual("nazwisko", nazwiskoKlienta);
-            Assert.AreEqual("numerDowodu", nrDowoduKlienta);
+            Assert.AreEqual(1, idGry);
+            Assert.AreEqual(1, idKlienta);
             Assert.AreEqual("01.01.0001 00:00:00", dataWypozyczenia.ToString());
             Assert.AreEqual("02.02.0002 00:00:00", dataOddania.ToString());
         }
@@ -276,42 +260,26 @@ namespace zadanie1.Tests
             WypelnienieTestowymi daneTestowe = new WypelnienieTestowymi();
             RepozytoriumDanych repozytorium;
             repozytorium = new RepozytoriumDanych(daneTestowe);
-            StanGry gra = new StanGry("test", 1, 1f);
-            StanGry graTest;
-            Klient klient = new Klient("test", "test", "test");
-            Klient klientTest;
+            int idGry = 3;
+            int idKlienta = 3;
+            int idGryTest;
+            int idKlientaTest;
             DateTime a = new DateTime(1, 2, 3);
             Wypozyczenie wypozyczenieDoAktualizacji;
             Wypozyczenie wypozyczenieTest;
-            wypozyczenieDoAktualizacji = new Wypozyczenie(gra, klient, a, a);
-            string nazwaGry;
-            int liczbaEgzemplarzyGry;
-            float cenaGry;
-            string imieKlienta;
-            string nazwiskoKlienta;
-            string nrDowoduKlienta;
             DateTime dataWypozyczenia;
             DateTime dataOddania;
 
+            wypozyczenieDoAktualizacji = new Wypozyczenie(idGry, idKlienta, a, a);
             repozytorium.aktualizujZdarzenie(0, wypozyczenieDoAktualizacji);
             wypozyczenieTest = (Wypozyczenie)repozytorium.zwrocZdarzenie(0);
-            graTest = wypozyczenieTest.zwrocStanGry();
-            nazwaGry = graTest.zwrocNazweGry();
-            liczbaEgzemplarzyGry = graTest.zwrocLiczbeEgzemplarzy();
-            cenaGry = graTest.zwrocCeneWypozyczenia();
-            klientTest = wypozyczenieTest.zwrocWypozyczajacego();
-            imieKlienta = klientTest.zwrocImie();
-            nazwiskoKlienta = klientTest.zwrocNazwisko();
-            nrDowoduKlienta = klientTest.zwrocNumerDowodu();
+            idGryTest = wypozyczenieTest.zwrocIdGry();
+            idKlientaTest = wypozyczenieTest.zwrocIdWypozyczajacego();
             dataWypozyczenia = wypozyczenieTest.zwrocDateWypozyczenia();
             dataOddania = wypozyczenieTest.zwrocDateOddania();
 
-            Assert.AreEqual("test", nazwaGry);
-            Assert.AreEqual(1, liczbaEgzemplarzyGry);
-            Assert.AreEqual(1f, cenaGry);
-            Assert.AreEqual("test", imieKlienta);
-            Assert.AreEqual("test", nazwiskoKlienta);
-            Assert.AreEqual("test", nrDowoduKlienta);
+            Assert.AreEqual(3, idGryTest);
+            Assert.AreEqual(3, idKlientaTest);
             Assert.AreEqual("03.02.0001 00:00:00", dataWypozyczenia.ToString());
             Assert.AreEqual("03.02.0001 00:00:00", dataOddania.ToString());
         }

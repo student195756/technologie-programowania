@@ -17,18 +17,8 @@ namespace zadanie1Tests
             baza.wykazKlientow.Add(new Klient("imie2", "nazwisko2", "nrDowodu2"));
             baza.katalogGier.dodajWpis("tytul", "opis");
             baza.katalogGier.dodajWpis("tytul2", "opis2");
-            baza.zdarzenia.Add(new Wypozyczenie(
-                                    new StanGry("nazwa", 1, 100f),
-                                    new Klient("imie", "nazwisko", "numerDowodu"),
-                                    new DateTime(1, 1, 1),
-                                    new DateTime(2, 2, 2) )
-                               );
-            baza.zdarzenia.Add(new Wypozyczenie(
-                        new StanGry("nazwa2", 2, 200f),
-                        new Klient("imie2", "nazwisko2", "numerDowodu2"),
-                        new DateTime(2, 2, 2),
-                        new DateTime(3, 3, 3))
-                   );
+            baza.zdarzenia.Add( new Wypozyczenie(1, 1, new DateTime(1, 1, 1), new DateTime(2, 2, 2)) );
+            baza.zdarzenia.Add( new Wypozyczenie(2, 2, new DateTime(2, 2, 2), new DateTime(3, 3, 3)) );
             baza.stanGier.Add( new StanGry("nazwa", 1, 100f) );
             baza.stanGier.Add( new StanGry("nazwa2", 2, 200f) );
             return baza;
