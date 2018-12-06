@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace zadanie1
 {
-    public class Wypozyczenie : Zdarzenie
+    public class Oddanie : Zdarzenie
     {
-        public Wypozyczenie(int idGry, int idWypozyczajacego, DateTime dataWypozyczenia, DateTime dataOddania)
+        public Oddanie(int idGry, int idWypozyczajacego, DateTime dataWypozyczenia, DateTime dataOddania)
         {
             this.idWypozyczajacego = idWypozyczajacego;
             this.idGry = idGry;
             this.dataWypozyczenia = dataWypozyczenia;
             this.dataOddania = dataOddania;
-            this.rodzajZdarzenia = "wypozyczenie";
+            this.rodzajZdarzenia = "oddanie";
         }
     }
 }

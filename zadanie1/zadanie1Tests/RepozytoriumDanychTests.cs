@@ -228,17 +228,20 @@ namespace zadanie1.Tests
             int idKlienta;
             DateTime dataWypozyczenia;
             DateTime dataOddania;
+            string rodzajZdarzenia;
 
             wypozyczenie = (Wypozyczenie)repozytorium.zwrocZdarzenie(0);
             idGry = wypozyczenie.zwrocIdGry();
             idKlienta = wypozyczenie.zwrocIdWypozyczajacego();
             dataWypozyczenia = wypozyczenie.zwrocDateWypozyczenia();
             dataOddania = wypozyczenie.zwrocDateOddania();
+            rodzajZdarzenia = wypozyczenie.zwrocRodzajZdarzenia();
 
             Assert.AreEqual(1, idGry);
             Assert.AreEqual(1, idKlienta);
             Assert.AreEqual("01.01.0001 00:00:00", dataWypozyczenia.ToString());
             Assert.AreEqual("02.02.0002 00:00:00", dataOddania.ToString());
+            Assert.AreEqual("wypozyczenie", rodzajZdarzenia);
         }
 
         [TestMethod()]

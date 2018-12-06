@@ -7,7 +7,7 @@ using zadanie1;
 
 namespace zadanie1Tests
 {
-    class WypelnienieTestowymi : WypelnienieDanymi
+    public class WypelnienieTestowymi : WypelnienieDanymi
     {
         public override BazaDanych wypelnij()
         {
@@ -18,7 +18,7 @@ namespace zadanie1Tests
             baza.katalogGier.dodajWpis("tytul", "opis");
             baza.katalogGier.dodajWpis("tytul2", "opis2");
             baza.zdarzenia.Add( new Wypozyczenie(1, 1, new DateTime(1, 1, 1), new DateTime(2, 2, 2)) );
-            baza.zdarzenia.Add( new Wypozyczenie(2, 2, new DateTime(2, 2, 2), new DateTime(3, 3, 3)) );
+            baza.zdarzenia.Add( new Wypozyczenie(0, 0, new DateTime(2, 2, 2), new DateTime(3, 3, 3)) );
             baza.stanGier.Add( new StanGry("nazwa", 1, 100f) );
             baza.stanGier.Add( new StanGry("nazwa2", 2, 200f) );
             return baza;

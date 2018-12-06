@@ -17,13 +17,6 @@ namespace zadanie1
             this.imie = imie;
             this.nazwisko = nazwisko;
             this.numerDowodu = numerDowodu;
-
-            Console.Write("utworzono klienta o imieniu ");
-            Console.WriteLine(imie);
-            Console.Write("nazwisku ");
-            Console.WriteLine(nazwisko);
-            Console.Write("numerze dowodu ");
-            Console.WriteLine(numerDowodu);
         }
 
         public string zwrocImie()
