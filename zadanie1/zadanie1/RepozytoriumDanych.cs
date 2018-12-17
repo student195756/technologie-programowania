@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace zadanie1
 {
@@ -114,6 +117,16 @@ namespace zadanie1
         public void usunStanGry(int indeks)
         {
             bazaDanych.stanGier.RemoveAt(indeks);
+        }
+
+        public void zapiszDane(string sciezkaPliku)
+        {
+            Stream strumien = File.Open(sciezkaPliku, FileMode.Create);
+            BinaryFormatter bf = new BinaryFormatter();
+
+            bf.Serialize(strumien, bazaDanych);
+
+            strumien.Close();
         }
     }
 }

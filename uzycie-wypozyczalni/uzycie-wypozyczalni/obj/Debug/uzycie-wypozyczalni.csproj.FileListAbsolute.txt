@@ -1,0 +1,10 @@
+D:\repo\technologie-programowania\uzycie-wypozyczalni\uzycie-wypozyczalni\bin\Debug\uzycie-wypozyczalni.exe.config
+D:\repo\technologie-programowania\uzycie-wypozyczalni\uzycie-wypozyczalni\bin\Debug\uzycie-wypozyczalni.exe.manifest
+D:\repo\technologie-programowania\uzycie-wypozyczalni\uzycie-wypozyczalni\bin\Debug\uzycie-wypozyczalni.exe
+D:\repo\technologie-programowania\uzycie-wypozyczalni\uzycie-wypozyczalni\bin\Debug\uzycie-wypozyczalni.pdb
+D:\repo\technologie-programowania\uzycie-wypozyczalni\uzycie-wypozyczalni\bin\Debug\zadanie1.exe
+D:\repo\technologie-programowania\uzycie-wypozyczalni\uzycie-wypozyczalni\bin\Debug\zadanie1.pdb
+D:\repo\technologie-programowania\uzycie-wypozyczalni\uzycie-wypozyczalni\obj\Debug\uzycie-wypozyczalni.csprojResolveAssemblyReference.cache
+D:\repo\technologie-programowania\uzycie-wypozyczalni\uzycie-wypozyczalni\obj\Debug\uzycie-wypozyczalni.exe.manifest
+D:\repo\technologie-programowania\uzycie-wypozyczalni\uzycie-wypozyczalni\obj\Debug\uzycie-wypozyczalni.exe
+D:\repo\technologie-programowania\uzycie-wypozyczalni\uzycie-wypozyczalni\obj\Debug\uzycie-wypozyczalni.pdb

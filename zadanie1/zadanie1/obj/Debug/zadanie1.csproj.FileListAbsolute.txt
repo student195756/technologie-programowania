@@ -1,0 +1,6 @@
+D:\repo\technologie-programowania\zadanie1\zadanie1\bin\Debug\zadanie1.exe.config
+D:\repo\technologie-programowania\zadanie1\zadanie1\bin\Debug\zadanie1.exe
+D:\repo\technologie-programowania\zadanie1\zadanie1\bin\Debug\zadanie1.pdb
+D:\repo\technologie-programowania\zadanie1\zadanie1\obj\Debug\zadanie1.exe
+D:\repo\technologie-programowania\zadanie1\zadanie1\obj\Debug\zadanie1.pdb
+D:\repo\technologie-programowania\zadanie1\zadanie1\obj\Debug\zadanie1.csprojResolveAssemblyReference.cache

@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using zadanie1;
 
-
-namespace testy_do_zadania1
+namespace uzycie_wypozyczalni
 {
     class Program
     {
         static void Main(string[] args)
         {
-            RepozytoriumDanych rp = new RepozytoriumDanych( new WypelnienieStalymi() );
-
+            WypelnienieTestowymi wt = new WypelnienieTestowymi();
+            WypozyczalniaGier wypozyczalnia = new WypozyczalniaGier(wt);
+            wypozyczalnia.wyswietlStanGry(0);
             Console.ReadKey();
         }
     }

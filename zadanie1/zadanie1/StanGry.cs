@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace zadanie1
 {
-    public class StanGry
+    [Serializable()]
+    public class StanGry : ISerializable
     {
         private string nazwaGry;
         private int liczbaEgzemplarzy;
@@ -39,5 +41,18 @@ namespace zadanie1
             this.liczbaEgzemplarzy = liczbaEgzemplarzy;
         }
 
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue("nazwa gry", nazwaGry);
+            info.AddValue("liczba egzemplarzy gry", liczbaEgzemplarzy);
+            info.AddValue("cena wypozyczenia gry", cenaWypozyczenia);
+        }
+
+        public StanGry(SerializationInfo info, StreamingContext context)
+        {
+            nazwaGry = (string)info.GetValue("nazwa gry", typeof(string));
+            liczbaEgzemplarzy = (int)info.GetValue("liczba egzemplarzy gry", typeof(int));
+            cenaWypozyczenia = (float)info.GetValue("cena wypozyczenia gry", typeof(float));
+        }
     }
 }

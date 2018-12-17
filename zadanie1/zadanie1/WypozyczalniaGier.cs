@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace zadanie1
 {
-    class WypozyczalniaGier
+    public class WypozyczalniaGier
     {
-        private RepozytoriumDanych repozytorium;
-        public WypozyczalniaGier(RepozytoriumDanych repozytorium)
+        public RepozytoriumDanych repozytorium;
+        private WypelnienieDanymi dane;
+        public WypozyczalniaGier(WypelnienieDanymi dane)
         {
-            this.repozytorium = repozytorium;
+            this.dane = dane;
+            this.repozytorium = new RepozytoriumDanych(dane);
         }
 
         public void wyswietlOpisGry(string tytulGry)
@@ -102,6 +106,11 @@ namespace zadanie1
             Console.WriteLine("koszt wypozyczenia:" + cenaWypozyczenia);
             Console.WriteLine("data wypozyczenia: " + dataWypozyczeniaString);
             Console.WriteLine("data oddania: " + dataOddaniaString);
+        }
+
+        public void zapiszDane(string sciezkaPliku)
+        {
+            repozytorium.zapiszDane(sciezkaPliku);
         }
     }
 }
