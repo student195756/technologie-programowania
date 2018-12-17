@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace zadanie1
 {
+    [Serializable()]
     public class Oddanie : Zdarzenie
     {
         public Oddanie(int idGry, int idWypozyczajacego, DateTime dataWypozyczenia, DateTime dataOddania)
