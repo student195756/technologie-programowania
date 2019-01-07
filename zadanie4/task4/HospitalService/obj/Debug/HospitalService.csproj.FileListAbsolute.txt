@@ -1,0 +1,6 @@
+D:\repo\technologie-programowania\zadanie4\task4\HospitalService\bin\Debug\HospitalService.exe.config
+D:\repo\technologie-programowania\zadanie4\task4\HospitalService\bin\Debug\HospitalService.exe
+D:\repo\technologie-programowania\zadanie4\task4\HospitalService\bin\Debug\HospitalService.pdb
+D:\repo\technologie-programowania\zadanie4\task4\HospitalService\obj\Debug\HospitalService.csprojResolveAssemblyReference.cache
+D:\repo\technologie-programowania\zadanie4\task4\HospitalService\obj\Debug\HospitalService.exe
+D:\repo\technologie-programowania\zadanie4\task4\HospitalService\obj\Debug\HospitalService.pdb

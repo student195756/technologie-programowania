@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="szpitalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="oddzialy">
+          <Key>
+            <PropertyRef Name="id_oddzialu" />
+          </Key>
+          <Property Name="id_oddzialu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwa" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pacjenci">
+          <Key>
+            <PropertyRef Name="id_pacjenta" />
+          </Key>
+          <Property Name="id_pacjenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwisko" Type="varchar" MaxLength="15" />
+          <Property Name="imie" Type="varchar" MaxLength="15" />
+          <Property Name="pesel" Type="char" MaxLength="11" />
+          <Property Name="data_przyjecia" Type="smalldatetime" Nullable="false" />
+          <Property Name="data_urodzenia" Type="smalldatetime" />
+          <Property Name="plec" Type="char" MaxLength="1" />
+          <Property Name="nr_pokoju" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="choroba" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="pokoje">
+          <Key>
+            <PropertyRef Name="nr" />
+          </Key>
+          <Property Name="nr" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="id_oddzialu" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'szpital.dbo.PP' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="PP">
+          <Property Name="id_pracownika" Type="int" />
+          <Property Name="id_pacjenta" Type="int" />
+        </EntityType>-->
+        <EntityType Name="pracownicy">
+          <Key>
+            <PropertyRef Name="id_pracownika" />
+          </Key>
+          <Property Name="id_pracownika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazwisko" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="imie" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="data_urodzenia" Type="smalldatetime" Nullable="false" />
+          <Property Name="data_zatrudnienia" Type="smalldatetime" Nullable="false" />
+          <Property Name="zawod" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="nr_pokoju" Type="char" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="oddzialy_FK">
+          <End Role="oddzialy" Type="Self.oddzialy" Multiplicity="0..1" />
+          <End Role="pokoje" Type="Self.pokoje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="oddzialy">
+              <PropertyRef Name="id_oddzialu" />
+            </Principal>
+            <Dependent Role="pokoje">
+              <PropertyRef Name="id_oddzialu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'szpital.dbo.PP' is referenced by a relationship, but cannot be found.
+        <Association Name="pacjenci_FK" />-->
+        <Association Name="pokoje_pacjenci_FK">
+          <End Role="pokoje" Type="Self.pokoje" Multiplicity="1" />
+          <End Role="pacjenci" Type="Self.pacjenci" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pokoje">
+              <PropertyRef Name="nr" />
+            </Principal>
+            <Dependent Role="pacjenci">
+              <PropertyRef Name="nr_pokoju" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="pokoje_pracownicy_FK">
+          <End Role="pokoje" Type="Self.pokoje" Multiplicity="1" />
+          <End Role="pracownicy" Type="Self.pracownicy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pokoje">
+              <PropertyRef Name="nr" />
+            </Principal>
+            <Dependent Role="pracownicy">
+              <PropertyRef Name="nr_pokoju" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'szpital.dbo.PP' is referenced by a relationship, but cannot be found.
+        <Association Name="pracownicy_FK" />-->
+        <EntityContainer Name="szpitalModelStoreContainer">
+          <EntitySet Name="oddzialy" EntityType="Self.oddzialy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pacjenci" EntityType="Self.pacjenci" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pokoje" EntityType="Self.pokoje" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pracownicy" EntityType="Self.pracownicy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="oddzialy_FK" Association="Self.oddzialy_FK">
+            <End Role="oddzialy" EntitySet="oddzialy" />
+            <End Role="pokoje" EntitySet="pokoje" />
+          </AssociationSet>
+          <AssociationSet Name="pokoje_pacjenci_FK" Association="Self.pokoje_pacjenci_FK">
+            <End Role="pokoje" EntitySet="pokoje" />
+            <End Role="pacjenci" EntitySet="pacjenci" />
+          </AssociationSet>
+          <AssociationSet Name="pokoje_pracownicy_FK" Association="Self.pokoje_pracownicy_FK">
+            <End Role="pokoje" EntitySet="pokoje" />
+            <End Role="pracownicy" EntitySet="pracownicy" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="szpitalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="oddzialy">
+          <Key>
+            <PropertyRef Name="id_oddzialu" />
+          </Key>
+          <Property Name="id_oddzialu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="pokoje" Relationship="Self.oddzialy_FK" FromRole="oddzialy" ToRole="pokoje" />
+        </EntityType>
+        <EntityType Name="pacjenci">
+          <Key>
+            <PropertyRef Name="id_pacjenta" />
+          </Key>
+          <Property Name="id_pacjenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwisko" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="imie" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="pesel" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="data_przyjecia" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="data_urodzenia" Type="DateTime" Precision="0" />
+          <Property Name="plec" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="nr_pokoju" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="choroba" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="pokoje" Relationship="Self.pokoje_pacjenci_FK" FromRole="pacjenci" ToRole="pokoje" />
+        </EntityType>
+        <EntityType Name="pokoje">
+          <Key>
+            <PropertyRef Name="nr" />
+          </Key>
+          <Property Name="nr" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="id_oddzialu" Type="Int32" />
+          <NavigationProperty Name="oddzialy" Relationship="Self.oddzialy_FK" FromRole="pokoje" ToRole="oddzialy" />
+          <NavigationProperty Name="pacjenci" Relationship="Self.pokoje_pacjenci_FK" FromRole="pokoje" ToRole="pacjenci" />
+          <NavigationProperty Name="pracownicy" Relationship="Self.pokoje_pracownicy_FK" FromRole="pokoje" ToRole="pracownicy" />
+        </EntityType>
+        <EntityType Name="pracownicy">
+          <Key>
+            <PropertyRef Name="id_pracownika" />
+          </Key>
+          <Property Name="id_pracownika" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwisko" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="imie" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="data_urodzenia" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="data_zatrudnienia" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="zawod" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nr_pokoju" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="pokoje" Relationship="Self.pokoje_pracownicy_FK" FromRole="pracownicy" ToRole="pokoje" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="oddzialy_FK">
+          <End Role="oddzialy" Type="Self.oddzialy" Multiplicity="0..1" />
+          <End Role="pokoje" Type="Self.pokoje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="oddzialy">
+              <PropertyRef Name="id_oddzialu" />
+            </Principal>
+            <Dependent Role="pokoje">
+              <PropertyRef Name="id_oddzialu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="pokoje_pacjenci_FK">
+          <End Role="pokoje" Type="Self.pokoje" Multiplicity="1" />
+          <End Role="pacjenci" Type="Self.pacjenci" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pokoje">
+              <PropertyRef Name="nr" />
+            </Principal>
+            <Dependent Role="pacjenci">
+              <PropertyRef Name="nr_pokoju" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="pokoje_pracownicy_FK">
+          <End Role="pokoje" Type="Self.pokoje" Multiplicity="1" />
+          <End Role="pracownicy" Type="Self.pracownicy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pokoje">
+              <PropertyRef Name="nr" />
+            </Principal>
+            <Dependent Role="pracownicy">
+              <PropertyRef Name="nr_pokoju" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="szpitalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="oddzialy" EntityType="Self.oddzialy" />
+          <EntitySet Name="pacjenci" EntityType="Self.pacjenci" />
+          <EntitySet Name="pokoje" EntityType="Self.pokoje" />
+          <EntitySet Name="pracownicy" EntityType="Self.pracownicy" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="oddzialy_FK" Association="Self.oddzialy_FK">
+            <End Role="oddzialy" EntitySet="oddzialy" />
+            <End Role="pokoje" EntitySet="pokoje" />
+          </AssociationSet>
+          <AssociationSet Name="pokoje_pacjenci_FK" Association="Self.pokoje_pacjenci_FK">
+            <End Role="pokoje" EntitySet="pokoje" />
+            <End Role="pacjenci" EntitySet="pacjenci" />
+          </AssociationSet>
+          <AssociationSet Name="pokoje_pracownicy_FK" Association="Self.pokoje_pracownicy_FK">
+            <End Role="pokoje" EntitySet="pokoje" />
+            <End Role="pracownicy" EntitySet="pracownicy" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="szpitalModelStoreContainer" CdmEntityContainer="szpitalEntities">
+          <EntitySetMapping Name="oddzialy">
+            <EntityTypeMapping TypeName="szpitalModel.oddzialy">
+              <MappingFragment StoreEntitySet="oddzialy">
+                <ScalarProperty Name="id_oddzialu" ColumnName="id_oddzialu" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pacjenci">
+            <EntityTypeMapping TypeName="szpitalModel.pacjenci">
+              <MappingFragment StoreEntitySet="pacjenci">
+                <ScalarProperty Name="id_pacjenta" ColumnName="id_pacjenta" />
+                <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+                <ScalarProperty Name="imie" ColumnName="imie" />
+                <ScalarProperty Name="pesel" ColumnName="pesel" />
+                <ScalarProperty Name="data_przyjecia" ColumnName="data_przyjecia" />
+                <ScalarProperty Name="data_urodzenia" ColumnName="data_urodzenia" />
+                <ScalarProperty Name="plec" ColumnName="plec" />
+                <ScalarProperty Name="nr_pokoju" ColumnName="nr_pokoju" />
+                <ScalarProperty Name="choroba" ColumnName="choroba" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pokoje">
+            <EntityTypeMapping TypeName="szpitalModel.pokoje">
+              <MappingFragment StoreEntitySet="pokoje">
+                <ScalarProperty Name="nr" ColumnName="nr" />
+                <ScalarProperty Name="id_oddzialu" ColumnName="id_oddzialu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pracownicy">
+            <EntityTypeMapping TypeName="szpitalModel.pracownicy">
+              <MappingFragment StoreEntitySet="pracownicy">
+                <ScalarProperty Name="id_pracownika" ColumnName="id_pracownika" />
+                <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+                <ScalarProperty Name="imie" ColumnName="imie" />
+                <ScalarProperty Name="data_urodzenia" ColumnName="data_urodzenia" />
+                <ScalarProperty Name="data_zatrudnienia" ColumnName="data_zatrudnienia" />
+                <ScalarProperty Name="zawod" ColumnName="zawod" />
+                <ScalarProperty Name="nr_pokoju" ColumnName="nr_pokoju" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="szpitalModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
