@@ -12,6 +12,27 @@ namespace HospitalInterfaces
     public interface IWCFHospitalService
     {
         [OperationContract]
-        List<string> ListDepartments();
+        List<string> listDepartments();
+
+        [OperationContract]
+        string showDepartment(int id);
+
+        [OperationContract]
+        void removeDepartment(int id);
+
+        [OperationContract]
+        List<string> listRooms();
+
+        [OperationContract]
+        List<string> listPatients();
+
+        [OperationContract]
+        string showPatient(int id);
+
+        [OperationContract]
+        List<string> listEmployees();
+
+        [OperationContract]
+        string showEmployee(int id);
     }
 }

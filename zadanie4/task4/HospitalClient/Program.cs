@@ -13,13 +13,19 @@ namespace HospitalClient
         static void Main(string[] args)
         {
             ChannelFactory<IWCFHospitalService> channelFactory;
-            channelFactory = new ChannelFactory<IWCFHospitalService>("Hospital Service Endpoint");
+            channelFactory = new ChannelFactory<IWCFHospitalService>("HospitalServiceEndpoint");
 
             IWCFHospitalService proxy = channelFactory.CreateChannel();
 
-            List<string> departments = proxy.ListDepartments();
+            List<string> rooms = proxy.listDepartments();
 
-            foreach(var i in departments)
+            foreach(var i in rooms)
+            {
+                Console.WriteLine(i);
+            }
+
+            proxy.removeDepartment(4);
+            foreach (var i in rooms)
             {
                 Console.WriteLine(i);
             }
