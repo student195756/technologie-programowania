@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 8.5" name="LinqToSql">
+  <DataContextMoniker Name="/LinqToSqlDataContext" />
+  <nestedChildShapes>
+    <classShape Id="bbb61901-8274-489b-a369-f3063df0cef2" absoluteBounds="0.75, 3.25, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/LinqToSqlDataContext/oddzialy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d85f33ab-b814-47df-b613-ee82667308ec" absoluteBounds="0.765, 3.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="404dc16d-49d1-4416-9799-204050408a19" absoluteBounds="6.25, 4, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/LinqToSqlDataContext/pacjenci" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b3329028-b16e-4237-8dbc-3e46e98bb89f" absoluteBounds="6.265, 4.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6df697a8-47d0-4a4c-9d25-6b7c2e3fec5e" absoluteBounds="3.5, 3.25, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/LinqToSqlDataContext/pokoje" />
+      <nestedChildShapes>
+        <elementListCompartment Id="178de040-cef4-44dd-9013-153fc02eff91" absoluteBounds="3.515, 3.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="32e1127b-8c37-4ccb-9216-d86ca039f7cc" absoluteBounds="9, 3.25, 2, 1.193992513020834">
+      <DataClassMoniker Name="/LinqToSqlDataContext/PP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5bc4d9ae-5131-423c-b646-6debef0f6874" absoluteBounds="9.015, 3.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a23a2912-93de-49d9-8eec-c27b41e95fc3" absoluteBounds="6.25, 1.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/LinqToSqlDataContext/pracownicy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8e284ba3-296f-46e3-a7e8-a80806fab65f" absoluteBounds="6.265, 1.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 4.22199625651042); (6.25 : 4.22199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDataContext/pokoje/pokoje_pacjenci" />
+      <nodes>
+        <classShapeMoniker Id="6df697a8-47d0-4a4c-9d25-6b7c2e3fec5e" />
+        <classShapeMoniker Id="404dc16d-49d1-4416-9799-204050408a19" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.84699625651042); (3.5 : 3.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDataContext/oddzialy/oddzialy_pokoje" />
+      <nodes>
+        <classShapeMoniker Id="bbb61901-8274-489b-a369-f3063df0cef2" />
+        <classShapeMoniker Id="6df697a8-47d0-4a4c-9d25-6b7c2e3fec5e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 4.22199625651042); (9 : 4.22199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDataContext/pacjenci/pacjenci_PP" />
+      <nodes>
+        <classShapeMoniker Id="404dc16d-49d1-4416-9799-204050408a19" />
+        <classShapeMoniker Id="32e1127b-8c37-4ccb-9216-d86ca039f7cc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 2.1874995); (10 : 2.1874995); (10 : 3.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDataContext/pracownicy/pracownicy_PP" />
+      <nodes>
+        <classShapeMoniker Id="a23a2912-93de-49d9-8eec-c27b41e95fc3" />
+        <classShapeMoniker Id="32e1127b-8c37-4ccb-9216-d86ca039f7cc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 3.25); (4.5 : 2.1874995); (6.25 : 2.1874995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LinqToSqlDataContext/pokoje/pokoje_pracownicy" />
+      <nodes>
+        <classShapeMoniker Id="6df697a8-47d0-4a4c-9d25-6b7c2e3fec5e" />
+        <classShapeMoniker Id="a23a2912-93de-49d9-8eec-c27b41e95fc3" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

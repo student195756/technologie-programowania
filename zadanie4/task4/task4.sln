@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalService", "HospitalService\HospitalService.csproj", "{8BA81CE2-B79F-4675-BF8B-5F4EC7634ECF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalClient", "HospitalClient\HospitalClient.csproj", "{ADC5D378-BDD7-43DB-BAFF-37FC68960B25}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalInterfaces", "HospitalInterfaces\HospitalInterfaces.csproj", "{3240B95E-BCDD-4FEE-8157-D74996990066}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalServiceTests", "HospitalServiceTests\HospitalServiceTests.csproj", "{2AE3EDDD-A32A-4075-900C-71B3BF624355}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfProject", "WpfProject\WpfProject.csproj", "{490AA65C-A96F-4684-B408-25AA54B6B68F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalService", "HospitalService\HospitalService.csproj", "{ACB93A1D-93E2-4A50-8383-0D37EC9A0058}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8BA81CE2-B79F-4675-BF8B-5F4EC7634ECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8BA81CE2-B79F-4675-BF8B-5F4EC7634ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8BA81CE2-B79F-4675-BF8B-5F4EC7634ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8BA81CE2-B79F-4675-BF8B-5F4EC7634ECF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ADC5D378-BDD7-43DB-BAFF-37FC68960B25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ADC5D378-BDD7-43DB-BAFF-37FC68960B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADC5D378-BDD7-43DB-BAFF-37FC68960B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -31,14 +25,14 @@ Global
 		{3240B95E-BCDD-4FEE-8157-D74996990066}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3240B95E-BCDD-4FEE-8157-D74996990066}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3240B95E-BCDD-4FEE-8157-D74996990066}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2AE3EDDD-A32A-4075-900C-71B3BF624355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2AE3EDDD-A32A-4075-900C-71B3BF624355}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2AE3EDDD-A32A-4075-900C-71B3BF624355}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2AE3EDDD-A32A-4075-900C-71B3BF624355}.Release|Any CPU.Build.0 = Release|Any CPU
 		{490AA65C-A96F-4684-B408-25AA54B6B68F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{490AA65C-A96F-4684-B408-25AA54B6B68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{490AA65C-A96F-4684-B408-25AA54B6B68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{490AA65C-A96F-4684-B408-25AA54B6B68F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACB93A1D-93E2-4A50-8383-0D37EC9A0058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACB93A1D-93E2-4A50-8383-0D37EC9A0058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACB93A1D-93E2-4A50-8383-0D37EC9A0058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACB93A1D-93E2-4A50-8383-0D37EC9A0058}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

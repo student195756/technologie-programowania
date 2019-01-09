@@ -1,4 +1,4 @@
-﻿using HospitalInterfaces;
+﻿using HospitalService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,25 +12,20 @@ namespace HospitalClient
     {
         static void Main(string[] args)
         {
-            ChannelFactory<IWCFHospitalService> channelFactory;
-            channelFactory = new ChannelFactory<IWCFHospitalService>("HospitalServiceEndpoint");
+            Query query = new Query();
 
-            IWCFHospitalService proxy = channelFactory.CreateChannel();
+            Console.WriteLine(query.getDepartment(1));
 
-            List<string> rooms = proxy.listDepartments();
+            List<string> departmentsList = new List<string>();
 
-            foreach(var i in rooms)
+            departmentsList = query.ListDepartments();
+
+            foreach(var i in departmentsList)
             {
                 Console.WriteLine(i);
             }
 
-            proxy.removeDepartment(4);
-            foreach (var i in rooms)
-            {
-                Console.WriteLine(i);
-            }
-
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
 }

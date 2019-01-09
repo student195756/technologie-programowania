@@ -53,9 +53,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HospitalInterfaces\HospitalInterfaces.csproj">
-      <Project>{3240b95e-bcdd-4fee-8157-d74996990066}</Project>
-      <Name>HospitalInterfaces</Name>
+    <ProjectReference Include="..\HospitalService\HospitalService.csproj">
+      <Project>{acb93a1d-93e2-4a50-8383-0d37ec9a0058}</Project>
+      <Name>HospitalService</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
