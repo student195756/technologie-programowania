@@ -1,0 +1,12 @@
+D:\repo\technologie-programowania\zadanie4\task4\HospitalServiceTests\bin\Debug\LinqToSql.designer.cs
+D:\repo\technologie-programowania\zadanie4\task4\HospitalServiceTests\bin\Debug\LinqToSql.dbml
+D:\repo\technologie-programowania\zadanie4\task4\HospitalServiceTests\bin\Debug\LinqToSql.dbml.layout
+D:\repo\technologie-programowania\zadanie4\task4\HospitalServiceTests\bin\Debug\HospitalServiceTests.dll
+D:\repo\technologie-programowania\zadanie4\task4\HospitalServiceTests\bin\Debug\HospitalServiceTests.pdb
+D:\repo\technologie-programowania\zadanie4\task4\HospitalServiceTests\bin\Debug\HospitalService.exe
+D:\repo\technologie-programowania\zadanie4\task4\HospitalServiceTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\repo\technologie-programowania\zadanie4\task4\HospitalServiceTests\bin\Debug\HospitalService.pdb
+D:\repo\technologie-programowania\zadanie4\task4\HospitalServiceTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+D:\repo\technologie-programowania\zadanie4\task4\HospitalServiceTests\obj\Debug\HospitalServiceTests.csprojResolveAssemblyReference.cache
+D:\repo\technologie-programowania\zadanie4\task4\HospitalServiceTests\obj\Debug\HospitalServiceTests.dll
+D:\repo\technologie-programowania\zadanie4\task4\HospitalServiceTests\obj\Debug\HospitalServiceTests.pdb

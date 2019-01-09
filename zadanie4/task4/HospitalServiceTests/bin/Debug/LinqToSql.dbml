@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="szpital" Class="LinqToSqlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=F550\ZSBD;Initial Catalog=szpital;Integrated Security=True;Connect Timeout=30;TrustServerCertificate=True" SettingsObjectName="HospitalService.Properties.Settings" SettingsPropertyName="szpitalConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.oddzialy" Member="oddzialies">
+    <Type Name="oddzialy">
+      <Column Name="id_oddzialu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nazwa" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="oddzialy_pokoje" Member="pokojes" ThisKey="id_oddzialu" OtherKey="id_oddzialu" Type="pokoje" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pacjenci" Member="pacjencis">
+    <Type Name="pacjenci">
+      <Column Name="id_pacjenta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nazwisko" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="imie" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="pesel" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="data_przyjecia" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="data_urodzenia" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="plec" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="nr_pokoju" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="choroba" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="pacjenci_PP" Member="PPs" ThisKey="id_pacjenta" OtherKey="id_pacjenta" Type="PP" />
+      <Association Name="pokoje_pacjenci" Member="pokoje" ThisKey="nr_pokoju" OtherKey="nr" Type="pokoje" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pokoje" Member="pokojes">
+    <Type Name="pokoje">
+      <Column Name="nr" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_oddzialu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="pokoje_pacjenci" Member="pacjencis" ThisKey="nr" OtherKey="nr_pokoju" Type="pacjenci" />
+      <Association Name="pokoje_pracownicy" Member="pracownicies" ThisKey="nr" OtherKey="nr_pokoju" Type="pracownicy" />
+      <Association Name="oddzialy_pokoje" Member="oddzialy" ThisKey="id_oddzialu" OtherKey="id_oddzialu" Type="oddzialy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PP" Member="PPs">
+    <Type Name="PP">
+      <Column Name="id_pracownika" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_pacjenta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="pacjenci_PP" Member="pacjenci" ThisKey="id_pacjenta" OtherKey="id_pacjenta" Type="pacjenci" IsForeignKey="true" />
+      <Association Name="pracownicy_PP" Member="pracownicy" ThisKey="id_pracownika" OtherKey="id_pracownika" Type="pracownicy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pracownicy" Member="pracownicies">
+    <Type Name="pracownicy">
+      <Column Name="id_pracownika" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nazwisko" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="imie" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="data_urodzenia" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="data_zatrudnienia" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="zawod" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nr_pokoju" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Association Name="pracownicy_PP" Member="PPs" ThisKey="id_pracownika" OtherKey="id_pracownika" Type="PP" />
+      <Association Name="pokoje_pracownicy" Member="pokoje" ThisKey="nr_pokoju" OtherKey="nr" Type="pokoje" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

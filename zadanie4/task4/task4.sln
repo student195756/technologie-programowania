@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfProject", "WpfProject\Wp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalService", "HospitalService\HospitalService.csproj", "{ACB93A1D-93E2-4A50-8383-0D37EC9A0058}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalServiceTests", "HospitalServiceTests\HospitalServiceTests.csproj", "{AAC1B357-2B33-4F55-A85D-0C6DF44E5308}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{ACB93A1D-93E2-4A50-8383-0D37EC9A0058}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACB93A1D-93E2-4A50-8383-0D37EC9A0058}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACB93A1D-93E2-4A50-8383-0D37EC9A0058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC1B357-2B33-4F55-A85D-0C6DF44E5308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC1B357-2B33-4F55-A85D-0C6DF44E5308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC1B357-2B33-4F55-A85D-0C6DF44E5308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC1B357-2B33-4F55-A85D-0C6DF44E5308}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

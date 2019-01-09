@@ -39,11 +39,11 @@ namespace HospitalService
             return roomsList;
         }
 
-        public string getRoom(int number)
+        public string getRoom(string number)
         {
-            string room = (from d in db.oddzialies
-                                 where d.id_oddzialu == number
-                                 select d.nazwa).First().ToString();
+            string room = (from r in db.pokojes
+                                 where r.nr == number
+                                 select r.nr).First().ToString();
 
             return room;
         }
@@ -144,7 +144,7 @@ namespace HospitalService
             return name;
         }
 
-        public string getPatientSurame(int id)
+        public string getPatientSurname(int id)
         {
             string surname = (from p in db.pacjencis
                            where p.id_pacjenta == id
