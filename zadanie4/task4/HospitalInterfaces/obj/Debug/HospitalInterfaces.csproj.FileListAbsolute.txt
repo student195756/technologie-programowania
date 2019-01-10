@@ -1,5 +1,0 @@
-D:\repo\technologie-programowania\zadanie4\task4\HospitalInterfaces\bin\Debug\HospitalInterfaces.dll
-D:\repo\technologie-programowania\zadanie4\task4\HospitalInterfaces\bin\Debug\HospitalInterfaces.pdb
-D:\repo\technologie-programowania\zadanie4\task4\HospitalInterfaces\obj\Debug\HospitalInterfaces.csprojResolveAssemblyReference.cache
-D:\repo\technologie-programowania\zadanie4\task4\HospitalInterfaces\obj\Debug\HospitalInterfaces.dll
-D:\repo\technologie-programowania\zadanie4\task4\HospitalInterfaces\obj\Debug\HospitalInterfaces.pdb

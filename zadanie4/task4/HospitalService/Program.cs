@@ -11,13 +11,6 @@ namespace HospitalService
     {
         static void Main(string[] args)
         {
-            LinqToSqlDataContext db = new LinqToSqlDataContext();
-
-            string department = (from d in db.oddzialies
-                                select d.nazwa).First().ToString();
-
-            Console.WriteLine(department);
-            Console.ReadKey();
         }
     }
 }
